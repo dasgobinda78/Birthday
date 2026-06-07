@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Queen! 👑❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1, #ffb3c6);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Premium Smooth Touch/Click Pop-up */
+        .pop-sticker {
+            position: absolute;
+            pointer-events: none;
+            font-size: 2.5rem;
+            animation: flyUp 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+            z-index: 9999;
+        }
+        @keyframes flyUp {
+            0% { transform: translate(-50%, -50%) scale(0.3) rotate(0deg); opacity: 1; }
+            100% { transform: translate(-50%, -150px) scale(1.5) rotate(25deg); opacity: 0; }
+        }
+
+        /* Ultra-Modern Glassmorphism Card Container */
+        .card-container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            width: 92%;
+            max-width: 400px;
+            height: 640px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(255, 20, 147, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        /* Premium Multi-Page Sliding System */
+        .page {
+            display: none;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            animation: premiumSlide 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        @keyframes premiumSlide {
+            0% { opacity: 0; transform: translateX(50px) scale(0.95); }
+            100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
+
+       /* লম্বা ছবির জন্য আল্ট্রা-প্রিমিয়াম পোর্ট্রেট ফ্রেম */
+.photo-frame {
+    width: 100%;
+    height: 380px; /* হাইট বাড়িয়ে ৩৮০ পিক্সেল করা হলো যাতে পুরো লম্বা ছবিটা ধরে */
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border: 4px solid white;
+    margin-bottom: 15px;
+    position: relative;
+    background-color: #fff;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ছবি পুরো স্ক্রিন জুড়ে চওড়া থাকবে */
+    object-position: center center; /* ছবিটাকে একদম মাঝখান থেকে ফোকাস করবে */
+    transition: transform 0.5s ease;
+}
+
+        .photo-frame:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Typography */
+        h1 {
+            color: #ff1493;
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin: 5px 0;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            color: #4f4f4f;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 500;
+            padding: 0 5px;
+            overflow-y: auto;
+        }
+
+        /* High-Response Cake Interactivity */
+        .cake-box {
+            position: relative;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        .main-cake {
+            font-size: 5rem;
+            display: block;
+            transition: transform 0.2s;
+        }
+        .cake-box:active .main-cake {
+            transform: scale(0.85);
+        }
+        .candle {
+            position: absolute;
+            top: -12px;
+            left: 41%;
+            font-size: 1.3rem;
+            animation: flicker 0.4s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { transform: scale(1) rotate(-3deg); }
+            100% { transform: scale(1.2) rotate(3deg); }
+        }
+
+        /* Premium Memory Grid */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .memory-card {
+            background: white;
+            border-radius: 20px;
+            padding: 12px 10px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255, 105, 180, 0.2);
+            transition: transform 0.2s, background 0.2s;
+        }
+        .memory-card:active {
+            transform: scale(0.93);
+            background: #fff0f5;
+        }
+        .memory-card .emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .memory-card .title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #ff1493;
+        }
+
+        /* Ultra-Premium Glow Buttons */
+        .next-btn {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            border: none;
+            padding: 15px 0;
+            width: 100%;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .next-btn:active {
+            transform: scale(0.97);
+        }
+        .next-btn:disabled {
+            background: #e0e0e0;
+            color: #a1a1a1;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        /* Confetti Shower */
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            opacity: 0;
+            animation: drop 2.5s infinite linear;
+        }
+        @keyframes drop {
+            0% { top: -10%; transform: translateX(0px) rotate(0deg); opacity: 1; }
+            100% { top: 100%; transform: translateX(70px) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main App Frame -->
+    <div class="card-container">
+
+        <!-- PAGE 1: Intro & Interactive Cake Cutting -->
+        <div class="page active" id="page1">
+            <!-- FIXED: Cleaned up inline height/width from img, let CSS handle it -->
+            <div class="photo-frame">
+                <img id="girlPhoto" src="photo/photo1.jpeg" height="300px" width="1500px" alt="Birthday Queen">
+            </div>
+            <h1>Happy Birthday, My Pagli! ❤️</h1>
+            <p>আজকের এই স্পেশাল দিনটা শুধু তোমার জন্য সোনা! নিচে তোমার জন্য একটা কিউট বার্থডে কেক রেখেছি, ওটায় হালকা করে টাচ করে কেকটা কেটে তোমার সারপ্রাইজ আনলক করো! 🎂👇</p>
+            
+            <div class="cake-box" onclick="premiumCutCake(event)">
+                <span class="candle" id="candleFlame">🔥</span>
+                <span class="main-cake" id="cakeEmoji">🎂</span>
+            </div>
+            <div style="color: #ff1493; font-weight: bold; font-size: 0.95rem;" id="statusText">Touch the cake to cut it! 🔪</div>
+
+            <button class="next-btn" id="lockBtn" onclick="navigatePage(2)" disabled>See Our Memories 💖</button>
+        </div>
+
+        <!-- PAGE 2: Multiple Secret Memory Cards -->
+        <div class="page" id="page2">
+            <h1>Our Romantic Secret Packs 💋</h1>
+            <p>নিচের প্রতিটি কার্ডে ক্লিক করে দেখো আমাদের সেই সুন্দর গোল্ডেন মেমোরি আর মিষ্টি প্রতিজ্ঞাগুলো! (সব কটা দেখতে হবে কিন্তু! 😊)</p>
+            
+            <div class="memory-grid">
+                <div class="memory-card" onclick="openSecret('🌹👸\n\nHappy Birthday to my Queen! তুমি আমার জীবনে আসা সেরা উপহার সোনা। সমাজ যতই খারাপ হোক, আমি তোমার হাত কোনোদিন ছাড়বো না। সারা জীবন এভাবেই আগলে রাখবো!')">
+                    <span class="emoji">🌹</span>
+                    <span class="title">Kiss Pack 1</span>
+                </div>
+                <div class="memory-card" onclick="openSecret('🇨🇭✈️\n\nবিয়ের পর আমাদের দুজনে মিলে সুইজারল্যান্ড যাওয়ার স্বপ্নটা আমি খুব তাড়াতাড়ি সত্যি করবো সোনা! তুমি শুধু এভাবেই আমার পাশে থেকো, প্রমিস!')">
+                    <span class="emoji">✈️</span>
+                    <span class="title">Kiss Pack 2</span>
+                </div>
+                <div class="memory-card" onclick="openSecret('👑🔒\n\nতোমার ওই মিষ্টি শাসন, আমাকে বেশি করে জল খেতে বলা আর পড়াশোনার জন্য বকা দেওয়া—আই জাস্ট লাভ ইউ ফর দিস! তুমি একটু চাপা স্বভাবের হলেও আমি জানি তুমি আমায় কতটা ভালোবাসো!')">
+                    <span class="emoji">👑</span>
+                    <span class="title">Kiss Pack 3</span>
+                </div>
+                <div class="memory-card" onclick="openSecret('🌹👑\n\nশুভ জন্মদিন আমার রাজকন্যা, আমার পাগলীটা! তুমি শুধু আমার ভালোবাসাই নও সোনা, তুমি আমার বেঁচে থাকার প্রতি মুহূর্তের অনুপ্রেরণা। তোমার ওই মিষ্টি হাসি, খুনসুটি আর আমাকে আগলে রাখার ধরণটা আমার জীবনের সেরা উপহার। সমাজ বা পরিস্থিতি যতই কঠিন হোক না কেন, আমি তোমায় প্রমিস করছি—আমি আরও অনেক বেশি মন দিয়ে পড়াশোনা করব, খুব তাড়াতাড়ি নিজের পায়ে দাঁড়াব আর সবার সামনে বুক ফুলিয়ে তোমার হাতটা চিরদিনের জন্য লুফে নেব। তুমি শুধু এভাবেই আমার পাশে থেকো সোনা, বাকি দুনিয়াটা আমি একাই সামলে নেব। আই লাভ ইউ সো মাচ! 💋❤️')">
+                    <span class="emoji">🧸</span>
+                    <span class="title">Kiss Pack 4</span>
+                </div>
+            </div>
+
+            <button class="next-btn" onclick="navigatePage(3)">Go to Final Page 🚀</button>
+        </div>
+
+        <!-- PAGE 3: Final Sweet Couple Photo & Promise -->
+        <div class="page" id="page3">
+            <!-- FIXED: Frame takes control of the layout seamlessly -->
+            <div class="photo-frame">
+                <img id="couplePhoto" src="/photo/photo2.jpeg" alt="Holding Hands Forever">
+            </div>
+            <h1>My Forever Promise 💍</h1>
+            <p>"আমি তোমার হাত ছেড়ে দেব বলে তো হাতটা ধরিনি। সারা জীবন থাকতে চাই বলে হাতটা ধরেছি।" — তোমার এই কথাটা আমার মনে চিরদিনের জন্য গেঁথে গেছে সোনা। আমি খুব মন দিয়ে পড়াশোনা করছি, খুব তাড়াতাড়ি নিজের পায়ে দাঁড়িয়ে তোমার হাতটা সবার সামনে ধরব!</p>
+            <p style="color: #ff1493; font-weight: 800; font-size: 1.1rem; margin-bottom: 5px;">I Love You Shona! Forever & Ever! 😘💋</p>
+            <button class="next-btn" onclick="navigatePage(1)">See Again 🔄</button>
+        </div>
+
+    </div>
+
+    <script>
+        let isCakeCut = false;
+
+        // Smooth Page Navigation
+        function navigatePage(pageNum) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('page' + pageNum).classList.add('active');
+            triggerConfetti();
+        }
+
+        // Ultra-Responsive Cake Cutting Effect
+        function premiumCutCake(e) {
+            if (isCakeCut) return;
+            isCakeCut = true;
+
+            // Update UI elements instantly
+            document.getElementById('candleFlame').style.display = 'none';
+            document.getElementById('cakeEmoji').innerText = '🍰✨';
+            document.getElementById('statusText').innerText = '🎉 Yaaay! Cake Cut Successfully! 🎂💋';
+            document.getElementById('lockBtn').removeAttribute('disabled');
+
+            // Burst of flying kiss emojis from the center of cake
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    spawnEmoji(x + (Math.random() * 60 - 30), y + (Math.random() * 60 - 30));
+                }, i * 40);
+            }
+            triggerConfetti();
+        }
+
+        function openSecret(text) {
+            alert(text);
+            triggerConfetti();
+        }
+
+        // Spawns Emojis exactly at Touch coordinates
+        function spawnEmoji(x, y) {
+            const emojis = ['💋', '💖', '😘', '❤️', '🍰', '✨'];
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            const pop = document.createElement('div');
+            pop.classList.add('pop-sticker');
+            pop.innerText = randomEmoji;
+            pop.style.left = x + 'px';
+            pop.style.top = y + 'px';
+            
+            document.body.appendChild(pop);
+            setTimeout(() => pop.remove(), 800);
+        }
+
+        // Touch Magic for the entire screen
+        document.body.addEventListener('click', function(e) {
+            if(e.target.tagName === 'BUTTON' || e.target.closest('.cake-box')) return;
+            spawnEmoji(e.clientX, e.clientY);
+        });
+
+        // Premium Confetti Particle Shower
+        function triggerConfetti() {
+            const colors = ['#ff69b4', '#ff1493', '#ffb6c1', '#ffd700', '#fff0f5'];
+            for (let i = 0; i < 35; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 1.5 + 's';
+                confetti.style.width = Math.random() * 6 + 6 + 'px';
+                confetti.style.height = confetti.style.width;
+                confetti.style.borderRadius = '50%';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 2500);
+            }
+        }
+
+        window.onload = triggerConfetti;
+    </script>
+</body>
+</html>
